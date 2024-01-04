@@ -2,49 +2,48 @@
   "users": [
     {
       "username": "john_doe",
-      "following": ["jane_doe", "ludob99", "__lucas__"],
-      "followers": ["jane_doe", "duca_rita_", "oric96"]
+      "following": ["martina.cimafonte","oric96","jane_doe","ludob99","jona_j","__lucas__"],
+      "followers": ["john_doe","oric96","jona_j"]
     },
     {
       "username": "jane_doe",
-      "following": ["john_doe", "ludob99"],
-      "followers": ["ludob99", "oric96", "duca_rita_"]
+      "following": ["martina.cimafonte","john_doe","ludob99","jona_j"],
+      "followers": ["john_doe","jona_j"]
     },
     {
       "username": "jona_j",
-      "following": ["ludob99", "martina.cimafonte", "mimmo_213"],
-      "followers": ["martina.cimafonte", "__lucas__", "oric96"]
+      "following": ["martina.cimafonte","mimmo_213","ludob99","john_doe","jane_doe"],
+      "followers": ["duca_rita","ludob99","john_doe","jane_doe"]
     },
     {
       "username": "ludob99",
-      "following": ["martina.cimafonte", "oric96", "duca_rita_"],
-      "followers": ["john_doe", "jane_doe", "jona_j"]
+      "following": ["martina.cimafonte","__lucas__","jona_j","mimmo_213"],
+      "followers": ["jane_doe","mimmo_213","jona_j","john_doe"]
     },
     {
       "username": "martina.cimafonte",
-      "following": ["oric96", "duca_rita_", "__lucas__"],
-      "followers": ["john_doe", "jane_doe", "ludob99"]
+      "following": ["duca_rita","mimmo_213","oric96"],
+      "followers": ["mimmo_213","ludob99","jona_j","jane_doe","john_doe","oric96","__lucas__","duca_rita"]
     },
     {
       "username": "mimmo_213",
-      "following": ["oric96", "duca_rita_", "jane_doe"],
-      "followers": ["ludob99", "jona_j", "martina.cimafonte"]
+      "following": ["martina.cimafonte","oric96","ludob99"],
+      "followers": ["martina.cimafonte","oric96","__lucas__","jona_j","ludob99"]
     },
     {
       "username": "oric96",
-      "following": ["ludob99", "martina.cimafonte", "__lucas__"],
-      "followers": ["john_doe", "jane_doe", "mimmo_213"]
+      "following": ["john_doe","martina.cimafonte","mimmo_213","duca_rita"],
+      "followers": ["john_doe","martina.cimafonte","mimmo_213","duca_rita"]
     },
     {
-      "username": "duca_rita_",
-      "following": ["jane_doe", "ludob99", "martina.cimafonte"],
-      "followers": ["ludob99", "mimmo_213", "oric96"]
+      "username": "duca_rita",
+      "following": ["martina.cimafonte","jona_j","oric96"],
+      "followers": ["martina.cimafonte","__lucas__","oric96"]
     },
     {
       "username": "__lucas__",
-      "following": ["oric96", "duca_rita_", "ludob99"],
-      "followers": ["john_doe", "martina.cimafonte", "oric96"]
+      "following": ["martina.cimafonte","duca_rita","mimmo_213"],
+      "followers": ["ludob99","john_doe"]
     }
   ]
 }
-
