@@ -1,0 +1,344 @@
+/* Profile_page */
+
+
+body {
+    background-color: white;
+    font-family: 'Times', sans-serif;
+}
+
+  .notify{
+    background-color: #50b7f5; /* Imposta il colore di sfondo verde */
+    color: white; /* Imposta il colore del testo bianco */
+    padding: 15px; /* Aggiunge spazio interno al div */
+      margin-right: 200px;
+      margin-left: 200px;
+    margin-bottom: 20px; /* Aggiunge spazio sotto il div */
+}
+
+
+.profile-cover {
+    position: relative;
+}
+
+
+.profile-cover__action {
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    padding: 120px 30px 10px 153px;
+    border-radius: 5px 5px 0 0;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-pack: end;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+    background-size: cover;
+}
+
+
+.profile-cover__img {
+    position: absolute;
+    top: 120px;
+    left: 30px;
+    text-align: center;
+    z-index: 1;
+}
+
+.profile-cover__img > img {
+    max-width: 140px;
+    border: 5px solid #fff;
+    border-radius: 50%;
+}
+
+.profile-cover__img > .h3 {
+    color: #393939;
+}
+
+.profile-cover__img > img + .h3 {
+    margin-top: 16px;
+}
+
+.profile-cover__info .nav {
+    margin-right: 28px;
+    padding: 15px 10px; /* Modifica qui il padding per adattarsi meglio */
+    color: black;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 300;
+    justify-content: flex-end;
+}
+
+.profile-cover__info .nav li {
+    margin-top: 13px;
+    margin-bottom: 13px;
+    display: inline-block; /* Imposta gli elementi li come display inline-block */
+}
+
+.profile-cover__info .nav li:not(:first-child) {
+    margin-left: 15px; /* Modifica qui il margine sinistro */
+    padding-left: 15px; /* Modifica qui il padding sinistro */
+    border-left: 1px solid #eee;
+
+}
+
+.profile-cover__info .nav strong {
+    margin-bottom: 10px;
+    color: black;
+    font-size: 20px;
+    display: block; /* Imposta l'elemento strong come blocco per farlo scendere a capo */
+}
+
+
+.panel {
+    margin-bottom: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+
+}
+
+.panel-heading {
+    padding: 5px 20px;
+
+}
+
+
+.panel-title {
+    float: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 700;
+}
+
+.panel-activity__status > .actions {
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    padding: 5px;
+
+}
+
+
+.tweetBox__tweetButton {
+    background-color: #50B7F5FF;
+    border: none;
+    color: white;
+    font-weight: 900;
+
+    border-radius: 30px;
+    width: 85px;
+    height: 40px;
+    margin-top: 5px;
+    margin-left: auto;
+}
+
+.btn-info {
+    background-color: #50B7F5FF;
+    border: none;
+    color: white;
+    font-weight: 700;
+
+    border-radius: 30px;
+    width: 95px;
+    height: 40px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.second-form {
+    margin-left: 20px;
+}
+
+.panel-activity__list {
+    list-style: none;
+
+}
+
+.activity__list__header {
+    position: relative;
+    min-height: 35px;
+    padding-top: 3px;
+    padding-left: 40px;
+    z-index: 0;
+
+}
+
+.activity__list__body {
+    padding-top: 10px;
+    padding-left: 47px;
+}
+
+.activity__list__header img {
+    position: absolute;
+    top: 7px;
+    left: 0;
+    bottom: 10px;
+    max-width: 35px;
+    border-radius: 50%;
+}
+
+.activity__list__header a {
+    font-weight: 500;
+    color: #50b7f5;
+
+}
+
+.profile-cover__info a {
+    color: black;
+}
+
+.activity__list__footer {
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    margin-top: 23px;
+    padding: 13px 8px 0;
+    border-top: 1px solid;
+}
+
+
+
+
+.sidebarOption {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.sidebarOption h2 {
+    margin: 0;
+}
+
+.sidebarOption .material-icons,
+.fa-twitter {
+    padding: 20px;
+}
+
+
+.sidebarOption.active {
+    color: var(--twitter-color);
+}
+
+.sidebar__tweet {
+    background-color: var(--twitter-color);
+    border: none;
+    color: white;
+    font-weight: 800;
+    border-radius: 30px;
+    height: 50px;
+    margin-top: 0px;
+}
+
+
+.sidebar {
+    flex: 0.2;
+    background-color: white;
+    min-width: 180px;
+    margin-top: 1px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box; /* Assicurati che il padding sia incluso nella larghezza totale */
+}
+
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.button-container form {
+    font-size: small;
+    margin-bottom: 12px;
+
+}
+
+/* Se vuoi posizionare i pulsanti in modo assoluto rispetto al loro contenitore */
+.repeat-button,
+.like-button {
+    margin-right: 50px;
+    margin-left: -40px;
+    margin-top: -10px;
+
+}
+
+.button-container {
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.repeat-button,
+.like-button {
+    position: absolute;
+    top: -10px;
+}
+
+.repeat-button {
+    right: -10px;
+}
+
+.like-button {
+    right: -50px; /* Aggiusta la distanza a tuo piacimento */
+}
+.activity__list__header .clock {
+    left: 0;
+    font-size: small;
+    margin-left: 180px;
+    color: black;
+}
+
+/* Stile del wrapper del modulo di caricamento dell'immagine del profilo */
+.profile-image-upload {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Stile del label */
+.profile-image-upload label {
+    display: block;
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+/* Stile del campo di input del file */
+.profile-image-upload .form-control {
+    width: 50%; /* Imposta la larghezza desiderata, ad esempio 40% */
+    padding: 5px; /* Riduci ulteriormente il padding */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+/* Stile dell'etichetta del campo di input del file */
+.profile-image-upload label.form-label {
+    /* Aggiungi qui le tue proprietÃ  CSS personalizzate */
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+    text-align: left; /* Imposta l'allineamento a sinistra */
+}
+/* Stile del pulsante di caricamento */
+.profile-image-upload button.custom-upload-button {
+    background-color: #50b7f5;
+    color: #fff;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: -90px;
+    margin-left: 80px; /* Imposta il margine sinistro a 0 o al valore desiderato */
+}
+.profile-image-upload button:hover {
+    background-color: #2980b9;
+}
+
+
+.gray-line {
+    border-top: 2px solid #ccc; /* Colore grigio (#ccc) e spessore 1px */
+    margin: 20px 0; /* Spazio sopra e sotto la riga */
+}
+
+.invisible-borders {
+        border: none;
+        outline: none;
+    }

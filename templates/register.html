@@ -1,0 +1,84 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <link rel="stylesheet" href="/static/register.css">
+    <h2>Iscriviti a Twitter!</h2>
+    <form method="post" action="{{ url_for('auth.register') }}">
+        {{ form.hidden_tag() }}
+        <div class="mb-3">
+            {{ form.first_name.label }}
+            {{ form.first_name(class="form-control") }}
+        </div>
+        <div class="mb-3">
+            {{ form.last_name.label }}
+            {{ form.last_name(class="form-control") }}
+        </div>
+        <div class="mb-3">
+            {{ form.email.label }}
+            {{ form.email(class="form-control") }}
+        </div>
+        {% if form.email.errors %}
+            <div class="text-danger">
+                {% for error in form.email.errors %}
+                    {% if error == 'Invalid email address.' %}
+                        <p>Indirizzo email non valido.</p>
+                    {% else %}
+                        <p>{{ error }}</p>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <div class="mb-3">
+            {{ form.username.label }}
+            {{ form.username(class="form-control") }}
+        </div>
+        <div class="mb-3">
+            {{ form.password.label }}
+            {{ form.password(class="form-control") }}
+        </div>
+        <div class="mb-3">
+            {{ form.confirm_password.label }}
+            {{ form.confirm_password(class="form-control") }}
+        </div>
+        {% if form.confirm_password.errors %}
+            <div class="text-danger">
+                <p>Le password non corrispondono</p>
+            </div>
+        {% endif %}
+        <div class="mb-3">
+            {{ form.birth_date.label }}
+            <div class="input-group date">
+                {{ form.birth_date(class="form-control datepicker", placeholder="DD-MM-YYYY") }}
+                <div class="input-group-addon">
+                    <span class="glyphicon glyphicon-th"></span>
+                </div>
+            </div>
+
+            {% if form.birth_date.errors %}
+                <div class="text-danger">
+                    {% for error in form.birth_date.errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <button type="submit" class="btn btn-primary">Registrati</button>
+    </form>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div id="flash-messages" class="alert alert-danger">
+                <ul>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <script>
+                // Scrolla verso l'alto quando appare un messaggio di avviso
+                document.getElementById('flash-messages').scrollIntoView();
+            </script>
+        {% endif %}
+    {% endwith %}
+
+{% endblock %}

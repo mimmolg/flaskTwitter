@@ -1,0 +1,164 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <title>Profile</title>
+    <script src="/static/profile.js"></script>
+    <link rel="stylesheet" href="/static/timeline.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+          integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+          crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/static/profile.css">
+
+
+                <div class="container-fluid">
+                    <div class="row">
+                        <!-- sidebar starts -->
+                        <div class="sidebar">
+                <i class="fab fa-twitter"></i>
+                <div class="sidebarOption {% if request.endpoint == 'tweets.timeline' %} active {% endif %}" onclick="window.location.href='{{ url_for('tweets.timeline') }}'">
+                    <span class="material-icons">home</span>
+                    <h2>Home</h2>
+                </div>
+                <div class="sidebarOption {% if request.endpoint == 'user_profile.profile' %} active {% endif %}" onclick="window.location.href='{{ url_for('user_profile.profile') }}'">
+                    <span class="material-icons">perm_identity</span>
+                    <h2>Profile</h2>
+                </div>
+                <div class="sidebarOption" onclick="window.location.href='{{ url_for('auth.logout') }}'">
+                    <span class="material-icons">exit_to_app</span>
+                    <h2>Logout</h2>
+                </div>
+            </div>
+                        <!-- sidebar ends -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="container">
+                    <div class="col-lg-8">
+                        {% if good_message %}
+                            <div class="notify" role="alert">
+                                {{ good_message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                        aria-label="Close"></button>
+                            </div>
+                        {% elif warning_message %}
+                            <div class="notify" role="alert">
+                                {{ warning_message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                        aria-label="Close"></button>
+                            </div>
+                        {% elif danger_message %}
+                            <div class="notify" role="alert">
+                                {{ danger_message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                        aria-label="Close"></button>
+                            </div>
+                        {% endif %}
+                        <div class="panel profile-cover">
+                            <div class="profile-cover__img">
+                                <img src="{{ profile_image_path }}" alt="">
+                                <h3 class="h3">{{ session['username'] }}</h3>
+                            </div>
+                            <div class="profile-cover__action bg--img" data-overlay="0.3">
+                                <form id="followForm" method="post" action="/user_profile/profile">
+                                    {{ follow_form.csrf_token }}
+                                    <label for="{{ follow_form.follow_username.id }}">{{ follow_form.follow_username.label }}</label>
+                                    {{ follow_form.follow_username(size=15, placeholder='Username', class='form-control') }}
+                                    <input type="hidden" name="action" value="follow">
+                                    {{ follow_form.submit(class='btn btn-rounded btn-info') }}
+                                </form>
+
+                                <form id="unfollowForm" class="second-form" method="post"
+                                      action="/user_profile/profile">
+                                    {{ unfollow_form.csrf_token }}
+                                    <label for="{{ unfollow_form.unfollow_username.id }}">{{ unfollow_form.unfollow_username.label }}</label>
+                                    {{ unfollow_form.unfollow_username(size=15, placeholder='Username', class='form-control') }}
+
+                                    <input type="hidden" name="action" value="unfollow">
+                                    {{ unfollow_form.submit(class='btn btn-rounded btn-info') }}
+                                </form>
+                            </div>
+
+                            <div class="profile-cover__info">
+                                <ul class="nav">
+                                    <li>{{ tweets|length }} Tweet</li>
+                                    <li>{{ followers|length }} <a
+                                            href="{{ url_for('user_profile.followers', username=session['username']) }}">follower</a>
+                                    </li>
+                                    <li>{{ following|length }} <a
+                                            href="{{ url_for('user_profile.get_following', username=session['username']) }}">seguiti</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Aggiungi questa sezione per il caricamento dell'immagine del profilo -->
+                        <div class="profile-image-upload">
+                            <form method="post" action="{{ url_for('user_profile.profile') }}" enctype="multipart/form-data">
+                                {{ profile_image_form.csrf_token }}
+                                <!-- Utilizza il nuovo campo di selezione image_choice -->
+                                <div class="mb-3">
+                                    <label for="profile-image" class="form-label">Choose Profile Image</label>
+                                    {{ profile_image_form.image_choice(id='profile-image', class='form-control') }}
+                                </div>
+                                <!-- Mantieni il pulsante di invio -->
+                                <button type="submit" class="btn btn-primary custom-upload-button">Upload</button>
+                            </form>
+                        </div>
+
+                        <div class="panel">
+                            <hr class="gray-line">
+                            <!-- tweetbox starts -->
+                            <div class="tweetBox">
+                                <form method="post" action="{{ url_for('user_profile.profile') }}">
+                                    {{ tweet_form.csrf_token }}
+                                    <div class="tweetbox__input">
+                                        {{ tweet_form.tweet_content(cols=50, rows=5, placeholder="What's happening?", class='form-control invisible-borders') }}
+                                    </div>
+                                    <button class="tweetBox__tweetButton" type="submit">Tweet</button>
+                                </form>
+                            </div>
+                            <!-- tweetbox ends -->
+                            <p></p>
+                            <p></p>
+                            <ul class="panel-activity__list">
+                                {% for tweet in tweets | reverse %}
+                                    <div class="post">
+                                    <li>
+                                        <div class="activity__list__header">
+                                            <img src="{{ profile_image_path }}" alt=""/>
+                                            <strong>{{ tweet.username }}</strong> posted the tweet :
+                                             <span class="clock" > <i class="fas fa-clock me-1" > </i> {{ tweet.timestamp.strftime('%d-%m-%Y %H:%M') }}</span>
+                                        </div>
+                                        <div class="activity__list__body entry-content">
+                                            <p>{{ tweet.content }}</p>
+
+                                        </div>
+                                        <div class="button-container">
+                                            <form method="post"
+                                                  action="{{ url_for('tweets.repeat_tweet', page='profile', tweet_id=tweet._id) }}">
+                                                <button type="submit" class="repeat-button"
+                                                        id="repeat-btn-{{ tweet._id }}">
+                                                    <span class="material-icons">repeat</span>
+                                                    <span class="repeat-count">{{ tweet.retweets }}</span>
+                                                </button>
+                                            </form>
+                                            <form method="post"
+                                                  action="{{ url_for('tweets.like_tweet', page='profile', tweet_id=tweet._id) }}">
+                                                <button type="submit"
+                                                        class="like-button {% if session['username'] in tweet['likes'] %}active{% endif %}"
+                                                        id="like-btn-{{ tweet._id }}">
+                                                    <span class="material-icons">favorite_border</span>
+                                                    <span class="like-count">{{ tweet.likes | length }}</span>
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </li>
+                                    </div>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+{% endblock %}

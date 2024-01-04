@@ -1,0 +1,448 @@
+[
+  {
+    "username": "john_doe",
+    "content": "Primo #tweet di John!",
+    "hashtags": ["tweet"],
+    "timestamp": "2023-12-01T12:00:00",
+    "likes": ["jane_doe"],
+    "retweets": 2
+  },
+   {
+    "username": "john_doe",
+    "content": "Lasciate che la creatività scorra nei vostri #tweet!  ",
+    "hashtags": ["tweet"],
+    "timestamp": "2024-01-03T07:30:00",
+    "likes": ["ludob99","martina.cimafonte","mimmo_213","jane_doe","jona_j","oric96","duca_rita_","__lucas__"],
+    "retweets": 13
+  },
+  {
+    "username": "john_doe",
+    "content": "Rendiamo questa giornata memorabile con azioni e parole gentili. #buongiorno  ",
+    "hashtags": ["buongiorno"],
+    "timestamp": "2024-01-03T16:50:00",
+    "likes": ["mimmo_213","jane_doe","jona_j","oric96","duca_rita_","__lucas__"],
+    "retweets": 4
+  },
+  {
+    "username": "john_doe",
+    "content": "#buongiorno  al nuovo anno!  ",
+    "hashtags": ["buongiorno"],
+    "timestamp": "2024-01-01T06:20:00",
+    "likes": ["jane_doe","jona_j","oric96","duca_rita_","__lucas__"],
+    "retweets": 1
+  },
+
+  {
+    "username": "jane_doe",
+    "content": "Ciao a tutti!",
+    "hashtags": [],
+    "timestamp": "2024-01-02T09:30:00",
+    "likes": ["john_doe","ludob99","martina.cimafonte","mimmo_213"],
+    "retweets": 5
+  },
+  {
+    "username": "mimmo_213",
+    "content": "Un #tweet al giorno tiene l'apatia lontana! ",
+    "hashtags": ["tweet"],
+    "timestamp": "2023-12-29T14:03:00",
+    "likes": ["john_doe","ludob99","martina.cimafonte","mimmo_213","jane_doe","jona_j","oric96","duca_rita_","__lucas__"],
+    "retweets": 15
+  },
+
+   {
+    "username": "jane_doe",
+    "content": "#buongiorno mondo! ☀\uFE0F Inizia la giornata con un sorriso e rendila straordinaria. ",
+    "hashtags": ["buongiorno"],
+    "timestamp": "2024-01-02T07:30:00",
+    "likes": ["john_doe","ludob99","martina.cimafonte","mimmo_213","jane_doe","jona_j","oric96","duca_rita_","__lucas__"],
+    "retweets": 35
+  },
+  {
+    "username": "__lucas__",
+    "content": "Qual è il vostro pensiero del giorno? Condividetelo con noi usando l'hashtag #tweet! \uD83E\uDD14",
+    "hashtags": ["tweet"],
+    "timestamp": "2024-01-03T17:00:20",
+    "likes": ["john_doe","ludob99","martina.cimafonte","mimmo_213","jane_doe","__lucas__"],
+    "retweets": 3
+  },
+  {
+    "username": "martina.cimafonte",
+    "content": "Quanto è bello godersi una tazza di caffè la mattina, ☕\uFE0F #buongiorno ",
+    "hashtags": ["buongiorno"],
+    "timestamp": "2024-01-02T09:40:00",
+    "likes": ["john_doe","martina.cimafonte","mimmo_213","jane_doe","jona_j","oric96","duca_rita_","__lucas__"],
+    "retweets": 10
+  },
+  {
+    "username": "mimmo_213",
+    "content": "Pronti a twittare su nuove avventure e scoperte! \uD83D\uDE80 #tweet ",
+    "hashtags": ["tweet"],
+    "timestamp": "2023-11-27T21:20:00",
+    "likes": ["john_doe","martina.cimafonte","mimmo_213","jane_doe","jona_j","oric96","duca_rita_","__lucas__"],
+    "retweets": 7
+  },
+  {
+    "username": "ludob99",
+    "content": "La vita è troppo breve per non condividere le gioie quotidiane. Facciamolo con un bel #tweet! \uD83C\uDF1F",
+    "hashtags": ["tweet"],
+    "timestamp": "2024-01-02T11:00:00",
+    "likes": ["john_doe","ludob99","martina.cimafonte","mimmo_213","jane_doe","jona_j","oric96","duca_rita_","__lucas__"],
+    "retweets": 0
+  },
+  {
+    "username": "john_doe",
+    "content": "Pronta per una serata di puro #relax",
+    "hashtags": ["relax"],
+    "timestamp": "2023-12-07T21:10:00",
+    "likes": ["john_doe","ludob99","martina.cimafonte","mimmo_213","jane_doe","jona_j","oric96","duca_rita_","__lucas__"],
+    "retweets": 6
+  },
+  {
+    "username": "martina.cimafonte",
+    "content": "la spiaggia è il luogo ideale per un completo #relax. Chi viene con me? ",
+    "hashtags": ["relax"],
+    "timestamp": "2023-01-02T11:43:00",
+    "likes": ["john_doe","ludob99","oric96","duca_rita_","__lucas__"],
+    "retweets": 0
+  },
+  {
+    "username": "martina.cimafonte",
+    "content": "Oggi è una pagina bianca pronta per essere scritta. #buongiorno a chiunque  ",
+    "hashtags": ["buongiorno"],
+    "timestamp": "2024-01-04T10:13:00",
+    "likes": ["john_doe","ludob99","martina.cimafonte","mimmo_213","jane_doe","jona_j","oric96","duca_rita_","__lucas__"],
+    "retweets": 10
+  }
+  ,
+  {
+    "username": "martina.cimafonte",
+    "content": "Qual è la vostra canzone motivazionale preferita da ascoltare durante il #work?  ",
+    "hashtags": ["work"],
+    "timestamp": "2024-01-03T13:43:00",
+    "likes": ["john_doe","ludob99","martina.cimafonte","duca_rita_","__lucas__"],
+    "retweets": 7
+  }
+  ,
+  {
+    "username": "mimmo_213",
+    "content": " feste natalizie = weekend senza pensieri ... solo #relax. ",
+    "hashtags": ["relax"],
+    "timestamp": "2023-12-22T22:03:00",
+    "likes": ["john_doe","ludob99","martina.cimafonte","mimmo_213","jane_doe","jona_j","oric96","duca_rita_","__lucas__"],
+    "retweets": 2
+  }
+  ,
+  {
+    "username": "ludob99",
+    "content": " Quest'anno lavoreró piu su me stessa #work",
+    "hashtags": ["work"],
+    "timestamp": "2024-01-01T00:53:00",
+    "likes": ["john_doe","jane_doe","jona_j","oric96","duca_rita_","__lucas__"],
+    "retweets": 12
+  }
+   ,
+  {
+    "username": "jane_doe",
+    "content": " Il segreto di una vita equilibrata è trovare il giusto mix di #work e #relax",
+    "hashtags": ["work","relax"],
+    "timestamp": "2024-01-03T20:02:00",
+    "likes": ["ludob99","martina.cimafonte","mimmo_213","jane_doe","jona_j","oric96","duca_rita_","__lucas__"],
+    "retweets": 1
+  }
+   ,
+  {
+    "username": "mimmo_213",
+    "content": " Solo la febbre ci mancava questa settimana ! #buongiorno No ",
+    "hashtags": ["buongiorno"],
+    "timestamp": "2023-12-29T07:41:00",
+    "likes": ["jane_doe","jona_j","oric96","duca_rita_","__lucas__"],
+    "retweets": 3
+  },
+   {
+    "username": "martina.cimafonte",
+    "content": " Bye 2023, Welcome 2024... Buon Anno a tutti!",
+    "hashtags": [],
+    "timestamp": "2024-01-01T00:02:00",
+    "likes": ["john_doe","ludob99","martina.cimafonte","mimmo_213","jane_doe","jona_j","oric96","duca_rita_","__lucas__"],
+    "retweets": 10
+  }
+  ,
+   {
+    "username": "mimmo_213",
+    "content": " Settimana piena a lavoro...solo #work ",
+    "hashtags": ["work"],
+    "timestamp": "2024-01-04T11:12:00",
+    "likes": ["jane_doe","jona_j","duca_rita_","__lucas__"],
+    "retweets": 0
+  }
+  ,
+   {
+    "username": "__lucas__",
+    "content": " #buongiorno a tutti i miei amici italiani !",
+    "hashtags": ["buongiorno"],
+    "timestamp": "2024-01-02T10:31:00",
+    "likes": ["john_doe","ludob99","martina.cimafonte","mimmo_213","jane_doe","jona_j","oric96","duca_rita_","__lucas__"],
+    "retweets": 5
+  }
+  ,
+   {
+    "username": "jane_doe",
+    "content": " Oggi mi immergo nella scrittura per trovare ispirazione. ✍\uFE0F\uD83D\uDCA1",
+    "hashtags": [],
+    "timestamp": "2024-01-02T12:11:00",
+    "likes": ["martina.cimafonte","__lucas__"],
+    "retweets": 1
+  }
+   ,
+   {
+    "username": "jane_doe",
+    "content": " Finalmente in vacanza ! #relax",
+    "hashtags": ["relax"],
+    "timestamp": "2023-12-24T16:17:00",
+    "likes": ["john_doe","ludob99","mimmo_213","jane_doe","jona_j","oric96","duca_rita_"],
+    "retweets": 6
+  },
+   {
+    "username": "__lucas__",
+    "content": " Non vedo l'ora di tornare in italia",
+    "hashtags": [],
+    "timestamp": "2023-12-18T21:37:00",
+    "likes": ["john_doe","ludob99","martina.cimafonte","mimmo_213","jane_doe","jona_j","oric96","duca_rita_","__lucas__"],
+    "retweets": 0
+  }
+  ,
+   {
+    "username": "ludob99",
+    "content": " Page 1 of 366",
+    "hashtags": [],
+    "timestamp": "2024-01-01T08:03:00",
+    "likes": ["john_doe","ludob99","martina.cimafonte","mimmo_213","jane_doe","jona_j","oric96","duca_rita_","__lucas__"],
+    "retweets": 4
+  }
+  ,
+   {
+    "username": "duca_rita",
+    "content": " #work on myself ",
+    "hashtags": ["work"],
+    "timestamp": "2024-01-04T08:05:00",
+    "likes": ["martina.cimafonte","mimmo_213","jane_doe","jona_j","oric96","duca_rita_","__lucas__"],
+    "retweets": 2
+  }
+  ,
+   {
+    "username": "ludob99",
+    "content": "Solo io sto contando i giorni che mancano all'estate? #relax",
+    "hashtags": ["relax"],
+    "timestamp": "2023-12-30T18:00:00",
+    "likes": ["john_doe","ludob99","martina.cimafonte","mimmo_213","jane_doe","jona_j","oric96","duca_rita_","__lucas__"],
+    "retweets": 12
+  }
+   ,
+   {
+    "username": "ludob99",
+    "content": "Vibes positive only oggi! #mood ☀\uFE0F\uD83D\uDE0A ",
+    "hashtags": ["mood"],
+    "timestamp": "2024-01-03T06:49:00",
+    "likes": ["john_doe","oric96","duca_rita_","__lucas__"],
+    "retweets": 8
+  }
+  ,
+   {
+    "username": "ludob99",
+    "content": " Ho capito di essere troppo meteropatica per vivere al nord ! ",
+    "hashtags": [],
+    "timestamp": "2024-01-04T16:09:00",
+    "likes": ["john_doe","ludob99","martina.cimafonte","mimmo_213","jane_doe","jona_j","oric96","duca_rita_","__lucas__"],
+    "retweets": 1
+  }
+  ,
+   {
+    "username": "__lucas__",
+    "content": " Quando la playlist è on point e il #mood è alle stelle. \uD83C\uDFA7\uD83C\uDF1F ",
+    "hashtags": ["mood"],
+    "timestamp": "2024-01-04T13:15:00",
+    "likes": ["john_doe","ludob99"],
+    "retweets": 3
+  }
+  ,
+   {
+    "username": "__lucas__",
+    "content": " Come ogni anno... da domani dieta ! xD",
+    "hashtags": [],
+    "timestamp": "2024-01-01T10:26:00",
+    "likes": ["john_doe","ludob99","mimmo_213","jane_doe","jona_j","oric96","duca_rita_","__lucas__"],
+    "retweets": 1
+  }
+
+  ,
+   {
+    "username": "duca_rita",
+    "content": " Il sole tramonta e il mio #mood è in sintonia con la quiete della sera. \uD83C\uDF05\uD83D\uDE0C  ",
+    "hashtags": ["mood"],
+    "timestamp": "2024-01-03T16:40:00",
+    "likes": ["john_doe","ludob99","martina.cimafonte","mimmo_213","jane_doe","jona_j","oric96","duca_rita_","__lucas__"],
+    "retweets": 9
+  }
+   ,
+   {
+    "username": "oric96",
+    "content": " Il mio #mood oggi? Avventura in arrivo! \uD83D\uDE80\uD83C\uDF0D ",
+    "hashtags": ["mood"],
+    "timestamp": "2024-01-04T11:23:00",
+    "likes": ["john_doe","ludob99","martina.cimafonte","mimmo_213","jane_doe","jona_j","oric96","duca_rita_","__lucas__"],
+    "retweets": 3
+  }
+   ,
+   {
+    "username": "oric96",
+    "content": " BuonAnno a TUTTI :) ",
+    "hashtags": [],
+    "timestamp": "2024-01-01T10:58:00",
+    "likes": ["__lucas__"],
+    "retweets": 0
+  }
+   ,
+   {
+    "username": "jona_j",
+    "content": " Finalmente VENERDI ! #mood positive ",
+    "hashtags": ["mood"],
+    "timestamp": "2023-12-29T17:03:00",
+    "likes": ["john_doe","ludob99","martina.cimafonte","mimmo_213","jane_doe","jona_j","oric96","duca_rita_","__lucas__"],
+    "retweets": 9
+  }
+    ,
+   {
+    "username": "oric96",
+    "content": " Voglia di lavorare saltami addosso ! #work time ",
+    "hashtags": ["work"],
+    "timestamp": "2024-01-02T07:03:00",
+    "likes": ["john_doe","ludob99","martina.cimafonte","jona_j","oric96","duca_rita_","__lucas__"],
+    "retweets": 3
+  }
+  ,
+   {
+    "username": "oric96",
+    "content": " godendomi questi ultimo giorni di #relax ... ",
+    "hashtags": ["relax"],
+    "timestamp": "2023-12-30T15:13:00",
+    "likes": ["john_doe","ludob99","martina.cimafonte","mimmo_213","oric96","duca_rita_","__lucas__"],
+    "retweets": 7
+  }
+  ,
+   {
+    "username": "oric96",
+    "content": " Un #tweet al giorno leva il medico di torno ! LOL",
+    "hashtags": ["tweet"],
+    "timestamp": "2023-12-20T12:09:00",
+    "likes": ["john_doe","martina.cimafonte","mimmo_213","jane_doe","jona_j","oric96","duca_rita_","__lucas__"],
+    "retweets": 1
+  }
+   ,
+   {
+    "username": "jona_j",
+    "content": " Altro che #relax ... si lavora anche a casa quando si è mamme",
+    "hashtags": ["relax"],
+    "timestamp": "2023-12-24T12:29:00",
+    "likes": ["john_doe","ludob99","martina.cimafonte","mimmo_213","jane_doe","jona_j","oric96","duca_rita_","__lucas__"],
+    "retweets": 5
+  }
+  ,
+   {
+    "username": "jona_j",
+    "content": " Buon Natale amici, #love all !",
+    "hashtags": ["love"],
+    "timestamp": "2023-12-25T02:34:00",
+    "likes": ["mimmo_213","jane_doe","jona_j","oric96","duca_rita_","__lucas__"],
+    "retweets": 7
+  },
+   {
+    "username": "duca_rita",
+    "content": " ma da voi é arrivato Babbo Natale ? da me ancora no :(",
+    "hashtags": [],
+    "timestamp": "2023-12-25T00:14:00",
+    "likes": ["john_doe","ludob99","__lucas__"],
+    "retweets": 3
+  }
+  ,
+   {
+    "username": "duca_rita",
+    "content": " La cosa più bella che possediamo è il tempo che dedichiamo agli altri #love \uD83D\uDD70\uFE0F\uD83D\uDC97 ",
+    "hashtags": ["love"],
+    "timestamp": "2024-01-03T04:22:00",
+    "likes": ["john_doe","ludob99","martina.cimafonte","mimmo_213","jane_doe","jona_j","oric96","duca_rita_","__lucas__"],
+    "retweets": 6
+  }
+  ,
+   {
+    "username": "duca_rita",
+    "content": "Carpediem ... sempre !",
+    "hashtags": [],
+    "timestamp": "2024-01-02T14:01:00",
+    "likes": ["john_doe","martina.cimafonte","mimmo_213","jane_doe","jona_j","__lucas__"],
+    "retweets": 1
+  },
+   {
+    "username": "jona_j",
+    "content": "Innamorata del natale ! #love december",
+    "hashtags": ["love"],
+    "timestamp": "2023-12-23T11:21:00",
+    "likes": ["john_doe","ludob99","martina.cimafonte","mimmo_213","jane_doe","jona_j","oric96","duca_rita_","__lucas__"],
+    "retweets": 14
+  }
+  ,
+   {
+    "username": "oric_96",
+    "content": "L'amico è come l'ombrello.. quando ti serve non lo trovi mai! #mood",
+    "hashtags": ["mood"],
+    "timestamp": "2024-01-04T14:46:00",
+    "likes": ["martina.cimafonte","mimmo_213","jane_doe","jona_j","oric96","duca_rita_","__lucas__"],
+    "retweets": 7
+  }
+  ,
+   {
+    "username": "jona_j",
+    "content": "Innamorata del natale ! #love december",
+    "hashtags": ["love"],
+    "timestamp": "2023-12-23T11:21:00",
+    "likes": ["john_doe","ludob99","martina.cimafonte","mimmo_213","jane_doe","jona_j","oric96","duca_rita_","__lucas__"],
+    "retweets": 14
+  }
+  ,
+   {
+    "username": "jona_j",
+    "content": "Oggi è un giorno NO ",
+    "hashtags": [],
+    "timestamp": "2024-01-03T10:23:00",
+    "likes": ["john_doe","ludob99","martina.cimafonte","oric96","duca_rita_","__lucas__"],
+    "retweets": 1
+  }
+ ,
+   {
+    "username": "martina.cimafonte",
+    "content": "un tweet al volo per darvi il buongiorno ! #love ",
+    "hashtags": ["love"],
+    "timestamp": "2023-12-23T11:21:00",
+    "likes": ["john_doe","ludob99","martina.cimafonte","mimmo_213","jane_doe","jona_j","oric96","duca_rita_","__lucas__"],
+    "retweets": 10
+  }
+  ,
+   {
+    "username": "mimmo_213",
+    "content": " Mangerei solo caramelle! #love candy ",
+    "hashtags": ["love"],
+    "timestamp": "2024-01-02T17:00:00",
+    "likes": ["john_doe","ludob99","martina.cimafonte","mimmo_213","jane_doe","jona_j","oric96","duca_rita_","__lucas__"],
+    "retweets": 4
+  }
+  ,
+   {
+    "username": "__lucas__",
+    "content": "I #love pizza ",
+    "hashtags": ["love"],
+    "timestamp": "2023-12-13T13:51:00",
+    "likes": ["john_doe","ludob99","martina.cimafonte","mimmo_213","jane_doe","jona_j","oric96","duca_rita_","__lucas__"],
+    "retweets": 8
+  }
+
+]
+

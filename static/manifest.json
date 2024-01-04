@@ -1,0 +1,23 @@
+{
+  "name": "Twitter",
+  "short_name": "Twitter",
+  "description": "MicroBlog",
+  "start_url": "/login.html",
+  "display": "standalone",
+  "background_color": "white",
+  "theme_color": "white",
+  "icons": [
+    {
+      "src": "twitterlogo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+     {
+      "src": "twitterlogo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+  }
+  ]
+}

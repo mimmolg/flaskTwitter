@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomePage</title>
+    <link rel="stylesheet" href="/static/timeline.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+          integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+          crossorigin="anonymous"
+    >
+    <script src="/static/like.js"></script>
+
+</head>
+<body>
+<!-- sidebar starts -->
+<!-- sidebar starts -->
+<div class="sidebar">
+    <i class="fab fa-twitter"></i>
+    <div class="sidebarOption {% if request.endpoint == 'tweets.timeline' %} active {% endif %}" onclick="window.location.href='{{ url_for('tweets.timeline') }}'">
+        <span class="material-icons">home</span>
+        <h2>Home</h2>
+    </div>
+    <div class="sidebarOption {% if request.endpoint == 'user_profile.profile' %} active {% endif %}" onclick="window.location.href='{{ url_for('user_profile.profile') }}'">
+        <span class="material-icons">perm_identity</span>
+        <h2>Profile</h2>
+    </div>
+    <div class="sidebarOption" onclick="window.location.href='{{ url_for('auth.logout') }}'">
+        <span class="material-icons">exit_to_app</span>
+        <h2>Logout</h2>
+    </div>
+</div>
+<!-- sidebar ends -->
+<!-- feed starts -->
+<div class="feed">
+    <div class="feed__header">
+        <h2>Home</h2>
+    </div>
+
+    <!-- tweetbox starts -->
+    <div class="tweetBox">
+        <form method="post" action="{{ url_for('tweets.timeline') }}">
+            {{ tweet_form.csrf_token }}
+            <div class="tweetbox__input">
+            <img src="{{ get_profile_image_path(session['username']) }}" alt=""/>
+                {{ tweet_form.tweet_content(cols=50, rows=5, placeholder="What's happening?", class='form-control invisible-borders') }}
+            </div>
+            <button class="tweetBox__tweetButton" type="submit">Tweet</button>
+        </form>
+    </div>
+    <!-- tweetbox ends -->
+    <!-- Visualizza i tuoi tweet -->
+    {% for tweet in tweets | reverse %}
+        <div class="post">
+        <div class="post__avatar">
+            <img src="{{ get_profile_image_path(tweet.username) }}" alt="">
+        </div>
+        <div class="post__body">
+            <div class="post__header">
+                <div class="post__headerText">
+                        <a href="{{ url_for('user_profile.view_profile', username=tweet.username) }}">
+                            {{ tweet.username }}</a> posted the tweet :
+                    <span class="small text-muted"> <i class="fas fa-clock me-1"> </i> {{ tweet.timestamp.strftime('%d-%m-%Y %H:%M') }}</span>
+                </div>
+                <div class="post__headerDescription">
+                    <p>{{ tweet.content}}</p>
+
+                </div>
+            </div>
+                <div class="post__footer">
+                    <span> </span> <span> </span>
+                    <span> </span> <span> </span>
+                    <span> </span> <span> </span>
+                    <span> </span> <span> </span>
+
+                    <form method="post" action="{{ url_for('tweets.repeat_tweet', page='tweets.timeline', tweet_id=tweet._id) }}">
+                        <button type="submit" class="repeat-button" id="repeat-btn-{{ tweet._id }}">
+                            <span class="material-icons">repeat</span>
+                            <span class="repeat-count">{{ tweet.retweets }}</span>
+                        </button>
+                    </form>
+                    <form method="post" action="{{ url_for('tweets.like_tweet', page='tweets.timeline', tweet_id=tweet._id) }}">
+                        <button type="submit"
+                                class="like-button {% if session['username'] in tweet['likes'] %}active{% endif %}"
+                                id="like-btn-{{ tweet._id }}">
+                            <span class="material-icons">favorite_border</span>
+                            <span class="like-count">{{ tweet.likes | length }}</span>
+                        </button>
+                    </form>
+                    <span> </span>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    <!-- Fine sezione tweet -->
+
+    </div>
+    <!-- feed ends -->
+    <!-- widgets starts -->
+    <div class="widgets">
+        <div class="widgets__input">
+            <form action="{{ url_for('tweets.timeline') }}" method="post">
+                {{ search_form.csrf_token }}
+                <span class="material-icons widgets__searchIcon"> search </span>
+                <input type="text" name="search_query" placeholder="Search Username">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+            {% if bad_message %}
+                <div id="myAlert" class="alert">
+                    <span class="closebtn" onclick="closeAlert();">&times;</span>
+                    {{ bad_message }}
+                </div>
+                <script>
+                    setTimeout(function () {
+                        document.getElementById('myAlert').style.display = 'none';
+                    }, 3000); // Nascondi l'alert dopo 5000 millisecondi (5 secondi)
+
+                    function closeAlert() {
+                        document.getElementById('myAlert').style.display = 'none';
+                    }
+                </script>
+            {% endif %}
+        <div class="widgets__widgetContainer">
+            <!-- Add this section to your timeline.html template -->
+            <div class="trending-section">
+                <h3>Trending Hashtags</h3>
+
+                    {% for hashtag, count in trending_hashtags %}
+                        <li><a href="{{ url_for('tweets.hashtag_tweets', hashtag=hashtag) }}">#{{ hashtag }} ({{ count }}
+                            tweets)</a></li>
+                    {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- widgets ends -->
+</body>
+</html>

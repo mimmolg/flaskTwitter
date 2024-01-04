@@ -1,0 +1,5 @@
+/* Stile per spostare l'elemento span a destra all'interno dell'elemento clock */
+.date_  {
+    margin-left: 250px; /* Modifica il valore a tuo piacimento */
+    font-size: small;
+}

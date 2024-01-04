@@ -1,0 +1,62 @@
+/* Importing fonts from Google */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Reseting */
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #03A9F4;
+}
+
+.container {
+    max-width: 450px;
+    margin: 45px auto;
+    padding: 15px;
+    background-color: #ecf0f3;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: medium;
+}
+
+h2 {
+    color: #555; /* Cambiato il colore del testo per adattarlo al primo CSS */
+    font-size: larger;
+    text-align: center;
+}
+
+.form-control {
+    padding-left: 10px;
+    margin-bottom: 15px;
+    border-radius: 20px;
+    box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff;
+    background: none; /* Aggiunto per adattare lo stile del primo CSS */
+    color: #666; /* Aggiunto per adattare lo stile del primo CSS */
+    font-size: small;
+}
+
+.datepicker {
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #03A9F4; /* Cambiato il colore di sfondo per adattarlo al primo CSS */
+    color: #fff; /* Cambiato il colore del testo per adattarlo al primo CSS */
+    border: none;
+    border-radius: 25px;
+    box-shadow: 3px 3px 3px #b1b1b1, -3px -3px 3px #fff;
+    letter-spacing: 1.3px;
+    font-size: 85%;
+}
+
+.btn-primary:hover {
+    background-color: #039BE5;
+}
+
+.text-danger {
+    color: #ff6347; /* Colore rosso simile a Twitter per gli errori */
+}
+
+

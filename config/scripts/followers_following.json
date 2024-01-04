@@ -1,0 +1,50 @@
+{
+  "users": [
+    {
+      "username": "john_doe",
+      "following": ["jane_doe", "ludob99", "__lucas__"],
+      "followers": ["jane_doe", "duca_rita_", "oric96"]
+    },
+    {
+      "username": "jane_doe",
+      "following": ["john_doe", "ludob99"],
+      "followers": ["ludob99", "oric96", "duca_rita_"]
+    },
+    {
+      "username": "jona_j",
+      "following": ["ludob99", "martina.cimafonte", "mimmo_213"],
+      "followers": ["martina.cimafonte", "__lucas__", "oric96"]
+    },
+    {
+      "username": "ludob99",
+      "following": ["martina.cimafonte", "oric96", "duca_rita_"],
+      "followers": ["john_doe", "jane_doe", "jona_j"]
+    },
+    {
+      "username": "martina.cimafonte",
+      "following": ["oric96", "duca_rita_", "__lucas__"],
+      "followers": ["john_doe", "jane_doe", "ludob99"]
+    },
+    {
+      "username": "mimmo_213",
+      "following": ["oric96", "duca_rita_", "jane_doe"],
+      "followers": ["ludob99", "jona_j", "martina.cimafonte"]
+    },
+    {
+      "username": "oric96",
+      "following": ["ludob99", "martina.cimafonte", "__lucas__"],
+      "followers": ["john_doe", "jane_doe", "mimmo_213"]
+    },
+    {
+      "username": "duca_rita_",
+      "following": ["jane_doe", "ludob99", "martina.cimafonte"],
+      "followers": ["ludob99", "mimmo_213", "oric96"]
+    },
+    {
+      "username": "__lucas__",
+      "following": ["oric96", "duca_rita_", "ludob99"],
+      "followers": ["john_doe", "martina.cimafonte", "oric96"]
+    }
+  ]
+}
+

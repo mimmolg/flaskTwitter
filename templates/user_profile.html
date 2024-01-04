@@ -1,0 +1,101 @@
+<!-- user_profile.html -->
+{% extends 'layout.html' %}
+{% block content %}
+    <title>{{ user.username }} - Profile</title>
+    <link rel="stylesheet" href="/static/timeline.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+          integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+          crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/static/profile.css">
+    <link rel="stylesheet" href="/static/user_profile.css">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- sidebar starts -->
+            <div class="sidebar">
+                <i class="fab fa-twitter"></i>
+                <div class="sidebarOption {% if request.endpoint == 'tweets.timeline' %} active {% endif %}" onclick="window.location.href='{{ url_for('tweets.timeline') }}'">
+                    <span class="material-icons">home</span>
+                    <h2>Home</h2>
+                </div>
+                <div class="sidebarOption {% if request.endpoint == 'user_profile.profile' %} active {% endif %}" onclick="window.location.href='{{ url_for('user_profile.profile') }}'">
+                    <span class="material-icons">perm_identity</span>
+                    <h2>Profile</h2>
+                </div>
+                <div class="sidebarOption" onclick="window.location.href='{{ url_for('auth.logout') }}'">
+                    <span class="material-icons">exit_to_app</span>
+                    <h2>Logout</h2>
+                </div>
+            </div>
+            <!-- sidebar ends -->
+
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="container">
+                    <div class="col-lg-8">
+                        <!-- Sezione del profilo dell'utente -->
+                        <div class="panel profile-cover">
+                            <div class="profile-cover__img">
+                                <img src="{{ get_profile_image_path(user.username) }}" alt="">
+                                <h3 class="h3">{{ user.username }}</h3>
+                            </div>
+                            <br><br><br><br><br><br><br><br>
+                            <div class="profile-cover__info">
+                                <ul class="nav">
+                                    <li>{{ tweets|length }} Tweet</li>
+                                    <li>{{ followers|length }} <a href="{{ url_for('user_profile.followers', username=user.username) }}">followers</a></li>
+                                    <li>{{ following|length }} <a href="{{ url_for('user_profile.get_following', username=user.username) }}">seguiti</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Fine della sezione del profilo dell'utente -->
+                            <br>
+                        <!-- Sezione per visualizzare i tweet -->
+                        <div class="panel">
+                            <hr class="gray-line">
+                            <ul class="panel-activity__list">
+                                {% for tweet in tweets | reverse %}
+                                    <div class="post">
+                                        <li>
+                                            <div class="activity__list__header">
+                                                    <img src="{{ get_profile_image_path(user.username) }}" alt="">
+                                                <strong>{{ tweet.username }}</strong> posted the tweet :
+                                                <span class="date_" > <i class="fas fa-clock me-1" > </i> {{ tweet.timestamp.strftime('%d-%m-%Y %H:%M') }}</span>
+                                            </div>
+                                            <div class="activity__list__body entry-content">
+                                                <p>{{ tweet.content }}</p>
+                                            </div>
+                                     <div class="button-container">
+                                        <form method="post"
+                                              action="{{ url_for('tweets.repeat_tweet', page='user_profile.view_profile', tweet_id=tweet._id) }}">
+                                            <button type="submit" class="repeat-button"
+                                                    id="repeat-btn-{{ tweet._id }}">
+                                                <span class="material-icons">repeat</span>
+                                                <span class="repeat-count">{{ tweet.retweets }}</span>
+                                            </button>
+                                        </form>
+                                        <form method="post"
+                                              action="{{ url_for('tweets.like_tweet', page='user_profile.view_profile', tweet_id=tweet._id) }}">
+                                            <button type="submit"
+                                                    class="like-button {% if session['username'] in tweet['likes'] %}active{% endif %}"
+                                                    id="like-btn-{{ tweet._id }}">
+                                                <span class="material-icons">favorite_border</span>
+                                                <span class="like-count">{{ tweet.likes | length }}</span>
+                                            </button>
+                                        </form>
+                                    </div>
+
+                                        </li>
+                                    </div>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <!-- Fine della sezione per visualizzare i tweet -->
+                        <!-- Altri contenuti della pagina, se necessario -->
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+{% endblock %}

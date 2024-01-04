@@ -1,0 +1,19 @@
+.post {
+
+    position: relative;
+
+}
+
+.small.text-muted {
+    top:10px;
+    left: 0;
+    font-size: small;
+    margin-left: 400px;
+}
+
+.post a
+{
+    font-size: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}

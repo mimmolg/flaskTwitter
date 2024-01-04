@@ -1,0 +1,77 @@
+[
+  {
+    "first_name": "John",
+    "last_name": "Doe",
+    "email": "john.doe@hotmail.com",
+    "username": "john_doe",
+    "password": "password",
+    "birth_date": "1990-01-01"
+  },
+  {
+    "first_name": "Jane",
+    "last_name": "Doe",
+    "email": "jane.doe@hotmail.com",
+    "username": "jane_doe",
+    "password": "password",
+    "birth_date": "1995-05-15"
+  },
+    {
+    "first_name": "Jona",
+    "last_name": "Vasq",
+    "email": "jane.doe@hotmail.com",
+    "username": "jona_j",
+    "password": "password",
+    "birth_date": "1995-05-15"
+  }
+  ,
+    {
+    "first_name": "Ludovica",
+    "last_name": "Battista",
+    "email": "ludo.b98@hotmail.com",
+    "username": "ludob99",
+    "password": "password",
+    "birth_date": "1999-04-08"
+  }
+  ,
+    {
+    "first_name": "Martina",
+    "last_name": "Cimafonte",
+    "email": "martinacimafonte99@hotmail.com",
+    "username": "martina.cimafonte",
+    "password": "password",
+    "birth_date": "1999-07-03"
+  }
+   ,
+    {
+    "first_name": "Domenico",
+    "last_name": "Lugubre",
+    "email": "mimmolg@live.it",
+    "username": "mimmo_213",
+    "password": "password",
+    "birth_date": "1999-03-25"
+  },
+    {
+    "first_name": "Ciro",
+    "last_name": "Testa",
+    "email": "ciro96@gmail.com",
+    "username": "oric96",
+    "password": "password",
+    "birth_date": "1986-10-20"
+  },
+    {
+    "first_name": "Rita",
+    "last_name": "Duca",
+    "email": "duca_rita@gmail.com",
+    "username": "duca_rita",
+    "password": "password",
+    "birth_date": "1991-12-15"
+  },
+    {
+    "first_name": "Lucas",
+    "last_name": "Santos",
+    "email": "santos_lucas88@gmail.com",
+    "username": "__lucas__",
+    "password": "password",
+    "birth_date": "1988-09-30"
+  }
+]
