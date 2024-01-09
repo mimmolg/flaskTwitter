@@ -14,7 +14,7 @@ Before running this project, make sure you have the following prerequisites inst
   sudo apt-get update
   sudo apt-get install git
   ```
-- [Python3](https://www.python.org/): Puoi installare python3 eseguendo i seguenti comandi:
+- [Python3](https://www.python.org/): You can install python3 by running the following commands:
   ```bash
   # On Debian/Ubuntu-based systems
   sudo apt-get update
