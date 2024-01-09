@@ -85,7 +85,7 @@ def profile():
             mongo.db.users.update_one({'username': session['username']},
                                       {'$set': {'profile_image_path': selected_image}})
 
-    # Assign the profile image path directly to the variable.
+    # Assign the profile image path directly to the variable
     profile_image_path = get_profile_image_path(session['username'])
 
     return render_template('profile.html', tweets=user_tweets, following=updated_following,
