@@ -79,6 +79,7 @@ def profile():
         # Get the user selected file name
         selected_image = profile_image_form.image_choice.data
 
+        # check if the user has selected an image
         if selected_image:
             # Update the image path in the database with the selected image name.
             mongo.db.users.update_one({'username': session['username']},
