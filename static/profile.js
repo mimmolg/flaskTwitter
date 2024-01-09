@@ -1,4 +1,5 @@
- document.addEventListener('DOMContentLoaded', function () {
+
+    document.addEventListener('DOMContentLoaded', function () {
         // Imposta un timeout per nascondere l'elemento dopo un certo periodo
         setTimeout(function () {
             var notifyElement = document.querySelector('.notify');

@@ -1,7 +1,7 @@
-// Nome della cache
+// Name of the cache
 let cacheName = 'pwa01';
 
-// Lista dei file da memorizzare nella cache
+// List of files to cache
 let filesToCache = [
     'flaskTwitter/templates/login.html',
     'flaskTwitter/templates/layout.html',
