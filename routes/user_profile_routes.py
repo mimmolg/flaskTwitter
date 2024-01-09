@@ -70,22 +70,21 @@ def profile():
     updated_following = list(user.get('following', []))
     updated_followers = list(user.get('followers', []))
 
-    # Aggiorna le opzioni per il campo image_choice con le immagini nella cartella predefinita
-    images_folder = 'static/profile_images'  # Sostituisci con il percorso reale della tua cartella
+    # Update image choices for the profile image form with images from the specified folder
+    images_folder = 'static/profile_images'  # Replace with the actual path to your folder
     image_choices = [(image, image) for image in os.listdir(images_folder) if image.endswith(('.jpg', '.jpeg', '.png'))]
     profile_image_form.image_choice.choices = image_choices
 
     if profile_image_form.validate_on_submit():
-        # Ottieni il nome del file selezionato dall'utente
+        # Get the user selected file name
         selected_image = profile_image_form.image_choice.data
 
-        # Se l'utente ha effettivamente selezionato un'immagine
         if selected_image:
-            # Aggiorna il percorso dell'immagine nel database con il nome dell'immagine selezionata
+            # Update the image path in the database with the selected image name.
             mongo.db.users.update_one({'username': session['username']},
                                       {'$set': {'profile_image_path': selected_image}})
 
-    # Assegna direttamente il percorso dell'immagine del profilo alla variabile
+    # Assign the profile image path directly to the variable.
     profile_image_path = get_profile_image_path(session['username'])
 
     return render_template('profile.html', tweets=user_tweets, following=updated_following,
@@ -99,11 +98,11 @@ def profile():
 
 @user_profile_blueprint.route('/followers/<username>')
 def followers(username):
-    # Ottieni la lista dei followers dell'utente specificato dal parametro username
+    # Retrieve the list of followers for the user specified by the 'username' parameter.
     user = mongo.db.users.find_one({'username': username})
 
     if user is None:
-        # Utente non trovato, puoi gestire questa situazione come preferisci
+        # user not found
         return render_template('login.html')
 
     followers_list = user.get('followers', [])
@@ -112,11 +111,11 @@ def followers(username):
 
 @user_profile_blueprint.route('/following/<username>')
 def get_following(username):
-    # Ottieni la lista dei following dell'utente specificato dal parametro username
+    # Retrieve the list of following for the user specified by the 'username' parameter.
     user = mongo.db.users.find_one({'username': username})
 
     if user is None:
-        # Utente non trovato, puoi gestire questa situazione come preferisci
+        # user not found
         return render_template('login.html')
 
     following_list = user.get('following', [])
@@ -125,29 +124,29 @@ def get_following(username):
 
 @user_profile_blueprint.route('/view_profile/<username>')
 def view_profile(username):
-    # Controlla se l'utente è autenticato
+    # Check if the user is authenticated
     if 'username' not in session:
         return redirect(url_for('auth.login'))
 
-    # Recupera l'utente della sessione
+    # Retrieve the user from the session.
     current_user = mongo.db.users.find_one({'username': session['username']})
 
-    # Recupera l'utente del profilo
+    # Retrieve the viewed profile user
     user = mongo.db.users.find_one({'username': username})
 
-    # Recupera i tweet dell'utente del profilo
+    # Retrieve the tweets of the viewed profile user
     user_tweets = list(mongo.db.tweets.find({'username': username}))
 
-    # Recupera i followers e i following dell'utente del profilo
+    # Retrieve the followers and following lists of the viewed profile user
     followers_list = user.get('followers', [])
     following_list = user.get('following', [])
 
-    # Verifica se l'utente della sessione sta cercando il proprio profilo
+    # Check if the session user is trying to view their own profile
     if current_user and current_user['username'] == user['username']:
-        # L'utente della sessione sta cercando il proprio profilo
+        # The session user is trying to view their own profile
         return redirect(url_for('user_profile.profile'))
 
     else:
-        # L'utente della sessione sta cercando il profilo di un altro utente
+        # The session user is trying to view the profile of another user.
         return render_template('user_profile.html', user=user, tweets=user_tweets, followers=followers_list,
                                following=following_list)

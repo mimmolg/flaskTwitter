@@ -41,7 +41,6 @@ class RegistrationForm(FlaskForm):
     confirm_password = PasswordField('Conferma Password', validators=[DataRequired(), EqualTo('password')])
     birth_date = StringField('Data di Nascita (DD-MM-YYYY)', validators=[DataRequired()])
 
-    # Campo di submit aggiunto
     submit = SubmitField('Registrati')
 
     def validate_birth_date(self, field):
@@ -49,7 +48,7 @@ class RegistrationForm(FlaskForm):
         today = date.today()
         age_limit_date = today.replace(year=today.year - 18)
 
-        # Converti la stringa della data in un oggetto datetime.date
+        # Convert the date string to a datetime.date object
         birth_date = datetime.strptime(field.data, '%d-%m-%Y').date()
 
         if birth_date > age_limit_date:

@@ -15,11 +15,11 @@ def timeline():
 
     success_message = session.pop('success_message', None)
 
-    # Recupera gli utenti che stai seguendo
+    # Retrieve the users you are following
     user = mongo.db.users.find_one({'username': session['username']})
     following = user.get('following', [])
 
-    # Recupera i tweet dell'utente corrente e dei suoi following
+    # Retrieve tweets of the current user and those they are following
     user_tweets = mongo.db.tweets.find({'username': {'$in': [session['username']] + following}})
 
     tweet_form = TweetForm()
@@ -30,17 +30,17 @@ def timeline():
 
     bad_message = None
 
-    # recupera i trending hashtags
+    # Retrieve trending hashtags
     trending_hashtags = update_trending_hashtags()
 
     if search_form.validate_on_submit():
         search_query = search_form.search_query.data
-        # Esegui la logica di ricerca degli utenti nel database
+        # Execute the logic to search for users in the database
         search_results = list(mongo.db.users.find({
             'username': {'$regex': f'.*{search_query}.*', '$options': 'i'}
         }))
 
-        # Se c'è esattamente un risultato nella ricerca, reindirizza direttamente al profilo dell'utente
+        # If there is exactly one result in the search, redirect directly to the user's profile
         if len(search_results) == 1:
             return redirect(url_for('user_profile.view_profile', username=search_results[0]['username']))
         elif not search_results:
@@ -52,7 +52,7 @@ def timeline():
         if good_message:
             return redirect(url_for('tweets.timeline'))
 
-        # Ora recupera nuovamente i trending hashtags
+        # Now retrieve trending hashtags again
         trending_hashtags = update_trending_hashtags()
 
     return render_template('timeline.html', tweets=user_tweets,
@@ -66,19 +66,19 @@ def repeat_tweet(page, tweet_id):
     if 'username' not in session:
         return redirect(url_for('auth.login'))
 
-    # Ottieni il tweet corrente dal database
+    # Get the current tweet from the database
     tweet = mongo.db.tweets.find_one({'_id': ObjectId(tweet_id)})
 
-    # Incrementa il conteggio dei retweet
+    # Increment the retweet count
     mongo.db.tweets.update_one({'_id': ObjectId(tweet_id)}, {'$inc': {'retweets': 1}})
 
-    # Redirect in base alla pagina (timeline o profile)
+    # Redirect based on the page (timeline or profile)
     if page == 'tweets.timeline':
         return redirect(url_for('tweets.timeline'))
     elif page == 'profile':
         return redirect(url_for('user_profile.profile'))
     else:
-        # Pagina sconosciuta, gestisci come preferisci
+        # Unknown page, handle as preferred
         return redirect(url_for('user_profile.view_profile', username=tweet['username']))
 
 
@@ -87,20 +87,20 @@ def like_tweet(page, tweet_id):
     if 'username' not in session:
         return redirect(url_for('auth.login'))
 
-    # Ottieni il tweet corrente dal database
+    # Get the current tweet from the database
     tweet = mongo.db.tweets.find_one({'_id': ObjectId(tweet_id)})
 
-    # Verifica se l'utente ha già messo "mi piace" al tweet
+    # Check if the user has already liked the tweet
     if session['username'] in tweet['likes']:
-        # Se sì, rimuovi il "mi piace"
+        # if yes, remove the like
         mongo.db.tweets.update_one({'_id': ObjectId(tweet_id)},
                                    {'$pull': {'likes': session['username']}})
     else:
-        # Se no, aggiungi il "mi piace"
+        # if no, add the like
         mongo.db.tweets.update_one({'_id': ObjectId(tweet_id)},
                                    {'$push': {'likes': session['username']}})
 
-    # Redirect in base alla pagina (timeline o profile)
+    # Redirect based on the page (timeline or profile)
     if page == 'tweets.timeline':
         return redirect(url_for('tweets.timeline'))
     elif page == 'profile':
@@ -114,7 +114,7 @@ def hashtag_tweets(hashtag):
     if 'username' not in session:
         return redirect(url_for('auth.login'))
 
-    # Recupera tutti i tweet che contengono l'hashtag specificato (senza distinzione tra maiuscole e minuscole)
+    # Retrieve all tweets containing the specified hashtag (case-insensitive)
     hashtag_tweetss = list(mongo.db.tweets.find({'hashtags': {'$regex': f'^{hashtag}$', '$options': 'i'}}))
 
     return render_template('hashtag_tweets.html', hashtag_tweets=hashtag_tweetss,
